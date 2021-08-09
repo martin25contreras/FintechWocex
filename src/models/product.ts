@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import {Schema,  model} from 'mongoose';
+import {Schema, model} from 'mongoose';
 
 const schema = new Schema({
     codigo: ObjectId,

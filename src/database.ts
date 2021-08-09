@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const mongoose = require('mongoose');
 
 const connect = async (): Promise<boolean> => {
   try {

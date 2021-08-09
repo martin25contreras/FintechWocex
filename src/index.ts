@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import { urlencoded, json } from 'body-parser';
-import cors from 'cors';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import path from 'path';
 import dotenv from 'dotenv';
 
@@ -11,11 +11,7 @@ dotenv.config();
 
 const PORT = 5000;
 const app: Application = express();
-app.use(
-  cors({
-    origin: ['http://localhost:5000','http://127.0.0.1:5500'],
-  })
-);
+
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
@@ -27,6 +23,7 @@ app.use((req: Request, res: Response) => {
 
 connectToDB().then((connected: boolean) => {
   if (connected) {
+    console.log('Database connect')
     app.listen(PORT, () => {
       console.log('running on ' + PORT);
     });
