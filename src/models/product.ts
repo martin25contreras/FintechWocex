@@ -1,15 +1,28 @@
 import { ObjectId } from 'mongodb';
-import {Schema, model} from 'mongoose';
+import {Schema, model, Document} from 'mongoose';
+
+export interface Product extends Document{
+  id: ObjectId;
+  codigo: string;
+  nombre: string;
+  cantidad: number;
+  precio?: number;
+  descripcion?: string;
+  categoria: string;
+  estatus: boolean;
+}
 
 const schema = new Schema({
-    codigo: ObjectId,
-    nombre: { type: String, required: true },
-    cantidad: { type: Number, required: true },
-    precio: { type: Number, default: 0 },
-    description: String,
-    estatus: Boolean,
-  });
+  id: ObjectId,
+  codigo: {type: String, required: true, unique: true},
+  nombre: { type: String, required: true, text: true },
+  cantidad: { type: Number, required: true },
+  precio: { type: Number, default: 0 },
+  descripcion: { type: String, text: true },
+  categoria: { type: String, required: true },
+  estatus: Boolean,
+});
 
-const Product = model('product', schema);
+const Product = model<Product>('product', schema);
 
 export default Product;

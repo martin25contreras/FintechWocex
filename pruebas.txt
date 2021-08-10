@@ -1,0 +1,71 @@
+ESTRUCTURA PARA CREAR EL PRODUCTO
+{
+    "codigo": "", 
+    "nombre": "", 
+    "cantidad": , 
+    "precio": , 
+    "descripcion": "",
+    "categoria": "",
+    "estatus": 
+    
+}
+
+PARA VALIRA EL FUNCIONAMIENTO DEL REGISTRO SE PROPICIARAN VARIOS CODIGOS YA REGISTRADOS
+    CODIGOS 11, 8526, 4567
+
+ESTRUCTURA PARA LA ACTUALIZACION DEL PRODUCTO
+EL CODIGO SE MANTIENE YA QUE ES EL CAMPO CLAVE PARA LA ACTUALIZACION
+{
+    "precio": ,
+    "nombre": "",
+    "codigo": "",
+    "cantidad": ,
+    "descripcion": "",
+    "categoria": ""
+}
+PARA VALIRA EL FUNCIONAMIENTO DE LA ACTUALIZACION SE PROPICIARAN VARIOS CODIGOS YA REGISTRADOS
+    CODIGOS 11, 8526, 4567
+
+ESTRUCTURA PARA LA ACTUALIZACION PARA EL STOCK DEL PRODUCTO
+EL CODIGO SE MANTIENE YA QUE ES EL CAMPO CLAVE PARA LA ACTUALIZACION
+{
+    "codigo": "",
+    "cantidad": ,
+    "estatus": ""
+}
+PARA VALIRA EL FUNCIONAMIENTO DE LA ACTUALIZACION SE PROPICIARAN VARIOS CODIGOS YA REGISTRADOS
+    CODIGOS 11, 8526, 4567
+
+ESTRUCTURA PARA CREAR LA VENTA DE MULTIPLES PRODUCTOS
+{
+    "factura" : "",
+    "nombre_cliente": "",
+    "cedula_cliente": "",
+    "fecha_venta" : "YYYY/MM/DD",
+    "product_id" : ["", "", ""],
+    "cantidad": ["","",""],
+    "medio_pago": "",
+    "tipo_pago": ""
+}
+
+ESTRUCTURA PARA CREAR LA VENTA DE UN (1) PRODUCTO
+{
+    "factura" : "",
+    "nombre_cliente": "",
+    "cedula_cliente": "",
+    "fecha_venta" : "YYYY/MM/DD",
+    "product_id" : "",
+    "cantidad": "",
+    "medio_pago": "",
+    "tipo_pago": ""
+}
+
+OBTENER PRODUCTOS CON ALGUNA PALABRA CLAVE (ESTO SE REALIZA POR EL NOMBRE O POR LA descripcion)
+ejemplos de palabras claves registrados
+    http://localhost:5000/api/products/KeyProduct/Mary
+    http://localhost:5000/api/products/KeyProduct/Montalban
+
+OBTENER PRODUCTOS POR SU CLASFICACION
+    http://localhost:5000/api/products/clasificacionProduct/Carnes
+    http://localhost:5000/api/products/clasificacionProduct/Lacteos
+    http://localhost:5000/api/products/clasificacionProduct/Granos
